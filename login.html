@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>RESPONSI PWC</title>
+    <style>
+        body {
+            font-size: 28px;
+            background: #D8BFD8;
+        }
+        .awal{
+            width: 500px; 
+            text-align: center;
+            box-shadow: 0 0 3px rgba(0,0,0,.5);
+            border-radius: 15px;
+            padding: 15px auto;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+        }
+
+        .awal img{
+           width: 250px;
+        }
+
+        .awal:hover{
+            box-shadow: 0 0 7px rgba(0,0,0,.5);
+            transition: .3s;
+        }
+
+        .awal button{
+            padding: 10px 15px;
+            border-radius: 15px;
+            border: none;
+            cursor: pointer;
+            background-color: #DDA0DD;
+            color: white;
+            letter-spacing: 1px;
+        }
+
+        .awal button:hover{
+            background-color: white;
+        }
+
+        .awal h1, .awal img, .awal h4{
+            margin-bottom: 25px;
+            }
+
+        .header{
+        	text-align: center;
+        }
+
+        .gambar{
+            width: 40%;
+            animation: toko 4s;
+        }
+        @keyframes toko{
+            0%{transform: rotate(0deg);}
+            100%{transform: rotate(360deg);}
+        }
+
+        @media only screen and (max-width: 720px){
+            body{
+                font-size: 20px;
+                background-color: #AFEEEE;
+            }
+            .awal img{
+                width: 250px;
+            }
+        }
+
+</style>
+</head>
+<body>
+    <div class="awal">
+        <h2>L'Electronics Store</h2>
+        <p>Elektronik paling murah dan original</p>
+        <div align="center">
+                <img src="pelengkap/toko.jpg" class="gambar">
+        </div>
+        <div class="container">
+            <form name="formPendaftaran" action="home.html" method="post" onsubmit="return validateForm()">
+                <div class="form-group">
+                    <label>Username :</label>
+                    <input type="text" name="nama" placeholder="Masukkan Username" class="form-control" maxlength="40" minlength="3">
+                </div>
+
+                <div class="form-group">
+                    <label>Password  :</label>
+                    <input type="Password" name="Password" placeholder="Masukkan Password" class="form-control">
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Login</button>
+                <button><a href="daftar.html">Daftar</button>
+                </div>
+            </form>
+        </div>
+    <script>
+        function validateForm() {
+            if (document.forms["formPendaftaran"]["nama"].value == "") {
+                alert("Nama Tidak Boleh Kosong");
+                document.forms["formPendaftaran"]["nama"].focus();
+                return false;
+            }
+            if (document.forms["formPendaftaran"]["Password"].value == "") {
+                alert("Password Tidak Boleh Kosong");
+                document.forms["formPendaftaran"]["Password"].focus();
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

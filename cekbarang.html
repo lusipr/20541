@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            background-color: #f9eeee;
+            margin: 20px;
+        }
+
+    .atas{
+        background:#9933ff;
+    }
+    .content{
+        text-align: center;
+        padding: 0px 400px 0px 400px;
+    }
+    .wrapper {
+        margin: 0 auto;
+        max-width: 1200px;
+        padding: 0 20px;
+        display: flex; }
+
+    .header {
+        background: #d9b3ff; }
+    .header .logo {
+        flex-basis: 20%;
+        padding: 12px 0; }
+    .header .logo h1 {
+        margin: 0;
+        font-size: 1.5em; }
+    .header .logo h1 a {
+        text-decoration: none;
+        color: #333; }
+    .header .logo h1 span {
+        font-weight: 300; }
+    .header .menu {
+        flex-basis: 80%; }
+    .header .menu ul {
+        float: right;
+        margin: 0;
+        padding: 0;
+        list-style: none; }
+    .header .menu ul li {
+        float: left; }
+    .header .menu ul li a {
+          display: block;
+          padding: 20px;
+          font-size: 14px;
+          text-decoration: none;
+          color: #333;
+          transition: 0.5ms;
+          border-bottom: 3px solid white; }
+    .header .menu ul li a:hover {
+        background:  #f2e6ff;
+        color: #fff;}
+
+    .container {
+        padding: 10px;
+        width: 99%;
+        font-family: "sans-serif";
+        }
+
+        .container .main-text .title {
+            text-align: center;
+            letter-spacing: 3px;
+        }
+
+        .container .col {
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 30px;
+            padding: 0 15%;
+        }
+
+        .container .col .col-1,
+        .col-2 {
+            width: 320px;
+            text-align: center;
+        }
+
+        .container .col .col-1 h2,
+        .col-2 h2 {
+            padding: 15px 0;
+            color: white;
+        }
+
+        .container .col .col-1 h3,
+        .col-2 h3 {
+            margin-top: 15px;
+        }  
+
+        .container .col .col-1 img {
+            width: 190px;
+        }
+
+        .container .col .col-1 h2 {
+            background: linear-gradient(to top right, #4527a0, #8e24aa);
+        }
+
+        .container .col .col-1,
+        .container .col .col-2 {
+            border: 3px solid black;
+            position: relative;
+            padding: 5px;
+        }
+
+        .container .col .col-2 h2 {
+            background: linear-gradient(to top right, #bb6fa7, #9c27b0);
+        }
+
+        .container .col .col-2 img:nth-child(1) {
+            width: 200px;
+        }
+
+        .container .col .col-2 img:nth-child(2) {
+            width: 160px;
+            position: absolute;
+            right: 83px;
+        }
+
+        /* Switch button */
+
+        .container .col .col-1 input {
+            visibility: hidden;
+        }
+
+        .container .col .col-1 label {
+            position: relative;
+            display: block;
+            width: 85px;
+            height: 35px;
+            background: linear-gradient(to top right, #4527a0, #8e24aa);
+            border-radius: 100px;
+            margin: 0 auto 15px auto;
+            cursor: pointer;
+        }
+
+
+        .container .col .col-1 label::after {
+            content: "";
+            width: 30px;
+            height: 30px;
+            background-color: white;
+            border-radius: 30px;
+            position: absolute;
+            top: 2.3px;
+            left: 2.8px;
+            transition: 0.4s;
+        }
+
+        .container .col .col-1 label:active::after {
+            width: 50px;
+        }
+
+        .container .col .col-1 input:checked+label {
+            background: linear-gradient(to top left, #4527a0, #8e24aa);
+        }
+
+        .container .col .col-1 input:checked+label::after {
+            left: calc(100% - 2.8px);
+            transform: translateX(-100%);
+            background-color: white;
+        }
+
+        /* Switch Range */
+
+        .container .col .col-2 .slide {
+            -webkit-appearance: none;
+            appearance: none;
+            background: linear-gradient(to top right, #bb6fa7, #9c27b0);
+            height: 17px !important;
+            width: 70%;
+            border-radius: 25px;
+            cursor: pointer;
+            margin-top: 15px;
+            padding: 3px 0;
+        }
+
+        .container .col .col-2 .slide::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            cursor: pointer;
+            background-color: white;
+            border: 2px solid #9c27b0;
+            cursor: pointer;
+        }
+
+        .container .col .col-2 .slide::-moz-range-thumb {
+            outline: none;
+        }
+
+        @keyframes animatedFan {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @media screen and (max-width: 780px) {
+            .container .col {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .container .col .col-2 {
+                margin-top: 20px;
+            }
+
+            .container .col .col-1,
+            .col-2 {
+                width: 250px;
+            }
+
+            .container .col .col-2 img:nth-child(2) {
+                width: 140px;
+                right: 25%;
+            }
+
+            .container .main-text .title h1 {
+                font-size: 1.6rem;
+            }
+
+            .container .main-text .title h2,
+            .col .col-1 h2,
+            .col-2 h2 {
+                font-size: 1.2rem;
+            }
+
+            .container .col .col-1 img {
+                width: 120px;
+            }
+
+            .container .col .col-2 img:nth-child(1) {
+                width: 170px;
+            }
+        }
+
+    </style>
+        <title>DOM MODUL 10</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+        <div class="wrapper">
+            <div class="logo">
+                <h1><a href=""><span>Log</span>In</a></h1>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href=" ">Home</a></li>
+                    <li><a href=" ">Email</a></li>
+                    <li><a href=" ">Search</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+        <div class="main-text">
+            <div class="title">
+                <h1>BERMAIN DENGAN DOM HTML</h1>
+                <h2>Untuk IoT dengan penggunaan condition statement</h2>
+            </div>
+        </div>
+        <div class="col">
+            <div class="col-1">
+                <h2>Kondisi Lampu On / Off</h2>
+                <h3>Lampu Off</h3>
+                <input type="checkbox" id="check">
+                <label for="check"></label>
+                <div class="main-img">
+                    <img src="pelengkap/lampu mati.gif" alt="lamp.png" id="lamp">
+                </div>
+                
+            </div>
+            <div class="col-2">
+                <h2>Kecepatan Kipas</h2>
+                <h3>Kecepatan Kipas Posisi : <span id="val"></span> </h3>
+                <input type="range" min="0" max="4" id="slider" value="0" class="slide">
+                <div class="main-img">
+                    <img src="pelengkap/main-fan.png" alt="fan.png">
+                    <img src="pelengkap/fan.png" alt="fan.png" id="fan">
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    </div>
+    <script>
+        const checkbox = document.getElementById('check');
+        const imgLampu = document.getElementById('lamp');
+        const imgkipas = document.getElementById('fan');
+        const slider = document.getElementById('slider');
+        const outputFan = document.getElementById('val');
+        const outputLamp = document.querySelector(".col .col-1 h3");
+
+
+        outputFan.innerHTML = slider.value;
+
+        checkbox.addEventListener('click', function () {
+            if (checkbox.checked) {
+                imgLampu.src = "pelengkap/lampu nyala.gif";
+                outputLamp.innerHTML = "Lampu On";
+            } else {
+                 imgLampu.src = "pelengkap/lampu mati.gif";
+                outputLamp.innerHTML = "Lampu Off";
+            }
+        });
+
+        slider.addEventListener('input', function () {
+            outputFan.innerHTML = this.value;
+            if (outputFan.innerHTML == 1) {
+                imgkipas.setAttribute('style', 'animation: animatedFan 5s linear infinite;');
+            } else if (outputFan.innerHTML == 2) {
+                imgkipas.setAttribute('style', 'animation: animatedFan 2.5s linear infinite;');
+            } else if (outputFan.innerHTML == 3) {
+                imgkipas.setAttribute('style', 'animation: animatedFan 1.5s linear infinite;');
+            } else if (outputFan.innerHTML == 4) {
+                imgkipas.setAttribute('style', 'animation: animatedFan 0.5s linear infinite;');
+            } else {
+                imgkipas.removeAttribute("style");
+            }
+        });
+    </script>
+</body>
+
+</html>

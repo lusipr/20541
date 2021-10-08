@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>RESPONSI PWC</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<style>
+body {
+  font-size: 28px;
+  background: #D8BFD8;
+}
+
+.header{
+    text-align: center;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+		.container{
+    		font-size: 20px;
+   			padding: 20px 10px;
+		}
+		h1{
+			text-align: center;
+			background-color: maroon;
+			color: white;
+			padding-top: 20px;
+			padding-bottom: 20px;
+		}
+		table{
+			background: transparent;
+			margin:auto;
+			color: black;
+			width: 80%;
+		}
+		.awal{
+   			width: 500px;
+    		text-align: center;
+    		box-shadow: 0 0 3px rgba(0,0,0,.5);
+    		border-radius: 15px;
+    		padding: 15px auto;
+    		position: absolute;
+    		left: 50%;
+    		top: 50%;
+    		transform: translate(-50%,-50%);
+		}
+
+		.awal img{
+    		width: 150px;
+		}
+
+
+		.awal:hover{
+    		box-shadow: 0 0 7px rgba(0,0,0,.5);
+    		transition: .3s;
+		}
+
+		.awal button{
+  			padding: 10px 15px;
+    		border-radius: 15px;
+    		border: none;
+    		cursor: pointer;
+    		background-color: blue;
+    		color: white;
+    		letter-spacing: 1px;
+		}
+		.awal button:hover{
+    	background-color: white;
+		}
+
+		.awal h1, .awal img, .awal h4{
+    		margin-bottom: 25px;
+		}
+		@media only screen and (max-width: 720px){
+			body{
+				background-color: grey;
+			}
+			table{
+				width: 100%;
+			}
+			h1{
+				text-align: center;
+				background-color: purple;
+				color: white;
+				width: 100%;
+				margin: auto;
+			}
+			td{
+				padding: 10px;
+			}
+		}
+	</style> 
+	<script type="text/javascript">
+		function Total(){
+    		var item = [27000, 5000, 15000, 16000, 12000];
+   			var total = 1,hasil = 0;
+    		for(let index = 0; index < item.length; index++){
+        		total = item[index] * document.getElementById("item"+(index+1)).value;
+        		hasil += total;
+    		}
+    		document.getElementById("hasil").value = "Rp "+hasil+",00";
+		}
+	</script>
+</head>
+<body>
+	<div class="header">
+  <h2>L'Electronics Store</h2>
+  <p>Elektronik paling murah dan original</p>
+</div>
+
+<ul>
+  <li><a class="active" href="#home">Home</a></li>
+  <li><a href="deskripsi.html">Deskripsi</a></li>
+  <li><a href="kondisi.html">Kondisi</a></li>
+  <li><a href="#kasir">Kasir</a></li>
+  <li><a href="#contact">Contact</a></li>
+  <li><a href="login.html">Login</a></li>
+</ul>
+    		<div class="container">
+        	<div class="content">
+            	<form action="#" method="#">
+                	<table>
+                 		<tr class="satu">
+							<th>NO</th>
+							<th>Produk</th>
+							<th>Harga Satuan</th>
+							<th>Jumlah Beli</th>
+                        </tr>
+                    	<tbody>
+                        <tr>
+                            <td>1.</td>
+                            <td mbl="Produk">Buavita<br>
+                                <div class="videos">
+									<video width="270" controls>
+										<source src="pelengkap/vivo v19.mp4" type="video/mp4">
+									</video>
+								</div>
+                            </td>
+                            <td mbl="Harga">Rp 27.000,00</td>
+                            <td mbl="Jumlah"><input type="number" id="item1"> Pcs</td>
+                        </tr>
+                        <tr>
+                            <td>2.</td>
+                            <td mbl="Produk">Chocolatos Drink<br>
+								<div class="videos">
+									<video width="270" controls>
+										<source src="chocolatos.mp4" type="video/mp4">
+									</video>
+								</div>
+							</td>
+                            <td mbl="Harga">Rp 5.000,00</td>
+                            <td mbl="Jumlah"><input type="number" id="item2"> Pcs</td>
+                        </tr>
+                        <tr>
+                            <td>3.</td>
+                            <td mbl="Produk">Kacang Garuda Rosta<br>
+								<div class="videos">
+									<video width="270" controls>
+										<source src="rosta.mp4" type="video/mp4">
+									</video>
+								</div>
+							</td>
+                            <td mbl="Harga">Rp 15.000,00</td>
+                            <td mbl="Jumlah"><input type="number" id="item3"> Pcs</td>
+                        </tr>
+                        <tr>
+                            <td>4.</td>
+                            <td mbl="Produk">Chitato<br>
+								<div class="videos">
+									<video width="270" controls>
+										<source src="Chitato.mp4" type="video/mp4">
+									</video>
+								</div>
+							</td>
+                            <td mbl="Harga">Rp 16.000,00</td>
+                            <td mbl="Jumlah"><input type="number" id="item4"> Pcs</td>
+                        </tr>
+                        <tr>
+                            <td>5.</td>
+                            <td mbl="Produk">Sprite<br>
+								<div class="videos">
+									<video width="270" controls>
+										<source src="Sprite.mp4" type="video/mp4">
+									</video>
+								</div>
+							</td>
+                            <td mbl="Harga">Rp 12.000,00</td>
+                            <td mbl="Jumlah"><input type="number" id="item5"> Pcs</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" class="btn-inp">
+                                <br><button type="button"onclick="Total();">HITUNG</button><br>
+                            Total Bayar : <input type="text" placeholder="Rp 0,00" id="hasil" disabled>
+                            <button class="button" onclick="window.print()">Cetak</button>
+                            </td>
+                        </tr>
+                    </tbody>	
+                </table>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
